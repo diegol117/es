@@ -374,6 +374,31 @@ margin-top: 1.5rem;   /* Usa un valor fijo para controlar la distancia exacta */
     line-height: 1.6;
 }
 
+.lang-switcher {
+    display: flex;
+    justify-content: flex-end; /* Lo alinea a la derecha */
+    gap: 8px;
+    font-family: 'Inter', sans-serif; /* O la que uses */
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+.lang-item {
+    text-decoration: none;
+    color: #ffffff;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.lang-item:hover, .lang-item.active {
+    opacity: 1;
+    font-weight: bold;
+}
+
+.lang-divider {
+    color: #444;
+}
+
 
 .main-title {
     text-align: center;
