@@ -1,0 +1,719 @@
+:root {
+    --bg-main: #0c0d0f;
+    --bg-card: #16181d;
+    --text-main: #ffffff;
+    --text-sub: #8a8f98;
+    --accent-cyan: #00baeb;
+    --primary-btn: #ccf381;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    margin: 0;
+    font-family:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+    display: block;
+}
+
+
+
+
+
+/* Contenedor principal */
+.academic-grid {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* Enlaces y logos (Consolidado) */
+.academic-link {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.academic-link svg,
+.text-logo-custom {
+    display: inline-block;
+    margin: 0 5px;
+    color: #fff;
+    fill: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Estados Hover */
+.academic-link:hover {
+    transform: translateY(-3px);
+}
+
+.academic-link:hover svg {
+    fill: #fff;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+}
+
+.academic-link:hover .text-logo-custom {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.academic-link:hover .tooltip-social {
+    opacity: 1;
+    transform: translate(-50%, -150%);
+}
+
+.article-category {
+    display: inline-block;
+    position: relative;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #007bff94;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+
+
+/* Tarjeta de Autor Especial (Estilo card-client adaptado) */
+.author-card {
+    background: #111;
+    padding: 2rem; /* Ajustado para igualar a las feature-cards */
+    border: 1px solid #333;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 230px; /* Misma altura que tus artículos */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.author-card:hover {
+    transform: translateY(-10px);
+    border-color: #555;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* Imagen del autor con el efecto azul de tu card-client */
+.author-card .user-picture {
+    width: 9.5rem;
+    height: 9.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 0.25rem;
+    border: 2px solid #444;
+    transition: border-color 0.3s ease;
+}
+
+.author-card:hover .user-picture {
+    border-color: #0077b5; /* El color azul que definiste */
+}
+
+/* Tipografía adaptada */
+.author-card .name-client {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+.author-card .name-client span {
+    display: block;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+}
+
+
+
+/* Título de la sección */
+#bio-title {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+
+
+
+.button .svg {
+    width: 20px;
+    fill: var(--main-color);
+}
+
+/* Estados Hover/Active Botón */
+.button:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px var(--main-color);
+}
+
+
+/* Otros Elementos UI */
+.btn-show-more {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-show-more:hover {
+    border-color: #fff;
+}
+
+
+/* Tarjeta de Cliente / Perfil (Consolidada) */
+.card-client {
+    background: #111;
+    width: 14rem;
+    padding: 20px 50px;
+    margin: 0 auto;
+    border: 1px solid #333;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-client:hover {
+    transform: translateY(-10px);
+    border-color: #555;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+}
+
+.card-client:hover .user-picture {
+    border-color: #0077b5;
+}
+
+/* Tipografía de la Tarjeta */
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+.card-paragraph {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.card-paragraph strong {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+.card-footer {
+margin-top: 1.5rem;   /* Usa un valor fijo para controlar la distancia exacta */
+    padding-top: 0;
+}
+
+
+
+
+.extra-logos {
+    display: none;
+}
+
+
+/* Sección de Características */
+.features-section {
+    width: 100%;
+    padding: 20px 0 80px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+    overflow-x: auto;
+    /* Unificado */
+}
+.features-grid {
+    display: grid;
+    /* En móvil: 1 columna. En pantallas de más de 1024px: 3 columnas */
+    grid-template-columns: 1fr;
+    gap: 20px; /* Reducimos un poco el gap para móviles */
+    justify-content: center;
+    width: 100%;
+    max-width: 1100px; /* Evita que las tarjetas se estiren demasiado en PC */
+    margin: 0 auto;
+}
+/* Ajuste Responsivo para el Grid */
+
+/* Tarjeta de Característica */
+.feature-card {
+    position: relative;
+    min-height: 230px; /* Cambiado a min-height por si el texto es largo en móvil */
+    padding: 2.5rem;
+    background: var(--bg-card);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    isolation: isolate;
+    cursor: default;
+    transition:
+        transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Borde con gradiente optimizado */
+.feature-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    padding: 1.5px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1), transparent 60%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    pointer-events: none;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    background: rgba(22, 24, 29, 0.8);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Ítems de Información */
+.info-item {
+    margin-bottom: 25px;
+}
+
+.info-item h4 {
+    color: #fff;
+    font-size: 1.15rem;
+    /* Promedio entre tus dos versiones */
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* Estilo de los párrafos */
+.info-item p {
+    color: #aaa;
+    line-height: 1.7; /* Aumentamos un poco el espacio entre líneas */
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-align: left; /* Alineación natural para lectura académica */
+}
+/* Footer de Información */
+.info-footer {
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: 1px solid #333;
+}
+
+.info-footer p {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+
+
+/* Título del Cargo */
+.job-title {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+/* Empresa y Detalles */
+.job-company {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    font-weight: 400;
+    font-style: italic;
+    /* Aporta distinción visual */
+    margin-bottom: 12px;
+}
+
+
+/* Descripción de Tareas */
+.job-desc {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+
+.main-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 3.5rem;
+}
+
+
+.name-client {
+    margin: 0;
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.name-client span {
+    display: block;
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 4px;
+}
+
+
+.user-picture {
+    overflow: hidden;
+    width: 9.5rem;
+    height: 9.5rem;
+    border: 2px solid #444;
+    background: #1a1a1a;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    transition: all 0.3s ease;
+}
+
+.profile-section {
+    padding: 50px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+    padding: 60px 0;
+    box-sizing: border-box;
+    border-top: 1px solid #222;
+}
+
+.profile-info {
+    max-width: 450px;
+    text-align: left;
+    margin: 0;
+}
+
+/* Contenedor principal */
+.profile-info-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px; /* Evita que el texto toque los bordes del celular */
+    text-align: left;
+}
+
+
+
+/* Botón de Lectura (Estilo Académico) */
+.read-article-btn {
+    display: inline-block;
+    padding: 8px 25px;
+    background: transparent;
+    border: 1px solid #007bff94;
+    border-radius: 20px;
+    color: #007bff94;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.read-article-btn:hover {
+    background: #007bff94;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
+}
+
+/* Bloque de Currículum (Consolidado) */
+.resume-block {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto 5rem auto;
+    padding: 0 20px;
+}
+
+
+/* Separador de Redes Sociales */
+.social-media:before {
+    content: " ";
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: 20px 0;
+    background: linear-gradient(90deg, transparent, #444, transparent);
+}
+
+/* Enlaces de Redes (Consolidado) */
+.social-media a {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.social-media svg {
+    width: 35px;
+    height: 35px;
+    fill: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* Estados Hover */
+.social-media a:hover {
+    transform: scale(1.1);
+}
+
+.social-media a:hover svg {
+    fill: #fff;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+/* Tooltip (Optimizado) */
+.social-media .tooltip-social {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.social-media a:hover .tooltip-social {
+    opacity: 1;
+    transform: translate(-50%, -180%);
+}
+
+/* Botón "See More" */
+#see-more-btn {
+    background: transparent;
+    border: 1px solid #007bff94;
+    color: #007bff94;
+    padding: 8px 25px;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#see-more-btn:hover {
+    background: #007bff94;
+    color: white;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
+}
+
+
+.user-picture svg {
+    width: 2rem;
+    fill: #ccc;
+}
+
+
+/* Tooltip Social (Consolidado) */
+.tooltip-social {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 100;
+    padding: 0.4rem 0.6rem;
+    background: #007bff94;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 500;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -90%);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    filter: none !important;
+    box-shadow: none !important;
+}
+
+/* Contenedor principal */
+.timeline-v2 {
+    position: relative;
+    margin-top: 4rem;
+    width: 100%;
+}
+
+/* La línea vertical (Versión con más presencia) */
+/* La línea vertical sólida */
+/* La línea vertical sólida y brillante */
+.timeline-v2::before {
+    content: "";
+    position: absolute;
+    left: 25%;
+    top: 0;
+    bottom: 0;
+    /* Un grosor de 3px es ideal para que sea visible pero elegante */
+    width: 3px;
+
+    /* Forzamos el blanco puro y máxima opacidad */
+    background-color: #ffffff !important;
+    opacity: 1 !important;
+
+    /* El resplandor es clave para que no se vea "plana" o "oscura" */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6),
+        0 0 5px rgba(255, 255, 255, 0.8);
+
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* Ítems de la Línea de Tiempo */
+.timeline-item {
+    position: relative;
+    width: 100%;
+    /* Cambiado de 200% a 100% para evitar scroll horizontal */
+    margin-bottom: 4rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* El círculo (punto) en la línea */
+.timeline-item::after {
+    content: "";
+    position: absolute;
+    left: 25%;
+    /* Alineado con la línea vertical */
+    top: 12px;
+    width: 12px;
+    height: 12px;
+    background: #000;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    z-index: 3;
+    transform: translateX(-50%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-item:hover::after {
+    background: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    transform: translateX(-50%) scale(1.2);
+}
+
+/* Fecha (a la izquierda de la línea) */
+.timeline-date {
+    position: absolute;
+    left: 0;
+    width: 20%;
+    /* Ajustado para que no choque con la línea al 25% */
+    top: 8px;
+    text-align: right;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.539);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Contenido (a la derecha de la línea) */
+.timeline-content {
+    width: 70%;
+    /* Aprovecha el espacio restante */
+    margin-left: 30%;
+    /* Deja espacio para la fecha y la línea */
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    text-align: left;
+    transition: all 0.4s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateX(10px);
+}
+
+
+
+@media (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: 1fr !important; /* Fuerza una columna en móvil */
+        gap: 30px;
+        padding: 0 5px;
+    }
+
+    .author-card {
+        width: 100%;
+        max-width: 340px; /* Mantiene el tamaño ideal */
+        margin: 0 auto;
+    }
+     .feature-card {
+        width: 100%;
+        max-width: 260px; /* Mantiene el tamaño ideal */
+        margin: 0 auto;
+    }
+}
+
+
+/* Media Query para Escritorio */
+@media (min-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(3, 340px); /* Mantiene tu diseño original en PC */
+        gap: 40px;
+    }
+}
+
+
+/* Ajustes específicos para celulares */
+@media (max-width: 768px) {
+    /* Este es el contenedor que envuelve Academic Background */
+    .profile-info {
+        padding-left: 25px !important;  /* Crea el margen a la izquierda */
+        padding-right: 25px !important; /* Crea el margen a la derecha */
+        width: 100% !important;
+        box-sizing: border-box !important; /* Evita que la caja se desborde */
+    }
+
+    .info-item p {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: left; /* Mantenemos el alineado a la izquierda */
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    #bio-title {
+        padding-left: 0;
+        text-align: center; /* El título centrado ayuda visualmente en móvil */
+    }
+}
